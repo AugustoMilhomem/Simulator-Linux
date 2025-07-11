@@ -1,0 +1,92 @@
+:root {
+    --bg: #0a0a0a;
+    --text: #0f0;
+    --prompt: #4CAF50;
+    --error: #f44336;
+    --warning: #FFC107;
+    --file: #FF9800;
+    --dir: #2196F3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    padding: 10px;
+}
+
+#terminal {
+    max-width: 100%;
+    height: 90vh;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 15px;
+    overflow-y: auto;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#output {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+#input-line {
+    display: flex;
+    align-items: center;
+}
+
+#prompt {
+    color: var(--prompt);
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+#cmd {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1em;
+    outline: none;
+    caret-color: var(--prompt);
+}
+
+.cmd-text {
+    color: var(--prompt);
+    font-weight: bold;
+}
+
+.error {
+    color: var(--error);
+}
+.success {
+    color: var(--prompt);
+}
+.file {
+    color: var(--file);
+}
+.dir {
+    color: var(--dir);
+}
+.mission {
+    background: rgba(0, 100, 0, 0.2);
+    border-left: 3px solid var(--prompt);
+    padding: 10px;
+    margin-top: 15px;
+}
+.mission-title {
+    font-weight: bold;
+    color: var(--dir);
+}
