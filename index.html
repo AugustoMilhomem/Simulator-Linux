@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kali Linux Simulator - Do Básico ao Pentest</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Kali Linux Simulator - Do Básico ao Hacker Ético</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="terminal">
-        <div id="output">
-            <div class="success">KALI LINUX SIMULATOR v1.0</div>
-            <div>Digite <span class="cmd-text">tutorial</span> para começar</div>
-            <div class="mission">
-                <div class="mission-title">MISSÃO ATUAL</div>
-                <div id="current-mission">Tutorial básico: use <code>ls</code>, <code>cd</code> e <code>cat</code>.</div>
-            </div>
-        </div>
-        <div id="input-line">
-            <span id="prompt">root@kali:/#</span>
-            <input type="text" id="cmd" autocomplete="off" autofocus>
-        </div>
+  <div id="terminal">
+    <div id="output">
+      <div class="success">KALI LINUX SIMULATOR v3.0</div>
+      <div>Digite <span class="cmd-text">help</span> para comandos ou <span class="cmd-text">tutorial</span> para iniciar</div>
+
+      <div class="mission">
+        <div class="mission-title">MISSÃO INICIAL: DOMINE O TERMINAL</div>
+        <div>Complete o tutorial básico para desbloquear missões de pentest</div>
+      </div>
     </div>
 
-    <!-- Scripts -->
-    <script type="module" src="script.js"></script>
+    <!-- FORM CORRIGIDO -->
+    <form id="terminal-form" autocomplete="off">
+      <div id="input-line">
+        <span id="prompt">root@kali-sim:~#</span>
+        <input type="text" id="cmd" name="cmd" autocomplete="off" autofocus />
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
