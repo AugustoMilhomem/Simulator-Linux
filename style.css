@@ -8,121 +8,101 @@
   --dir: #2196F3;
 }
 
-body {
+html, body {
+  margin: 0;
+  padding: 0;
   background: var(--bg);
   color: var(--text);
   font-family: 'Courier New', monospace;
-  margin: 0;
-  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 #terminal {
-  margin: 0 auto;
-  padding: 24px;
-  max-width: 100%;
-  min-height: 100vh;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  overflow-y: auto;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px 16px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 #output {
   flex: 1;
   overflow-y: auto;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  font-size: 22px;
+  line-height: 1.6;
   word-wrap: break-word;
   white-space: pre-wrap;
-  font-size: 20px;
-  line-height: 1.7;
 }
 
 #input-line {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  margin-top: auto;
+  gap: 10px;
 }
 
 #prompt {
   color: var(--prompt);
-  margin-right: 10px;
-  flex-shrink: 0;
   font-size: 22px;
+  flex-shrink: 0;
 }
 
 #cmd {
   background: transparent;
   border: none;
   color: var(--text);
-  font-family: inherit;
-  flex: 1;
-  min-width: 0;
   font-size: 22px;
+  flex: 1;
   outline: none;
   caret-color: var(--prompt);
+  padding: 10px 5px;
 }
 
 .cmd-text {
   color: var(--prompt);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
 }
 
-.error {
-  color: var(--error);
-}
-
-.success {
-  color: var(--prompt);
-}
-
-.file {
-  color: var(--file);
-}
-
-.dir {
-  color: var(--dir);
-}
+.error { color: var(--error); }
+.success { color: var(--prompt); }
+.file { color: var(--file); }
+.dir { color: var(--dir); }
 
 .mission {
   background: rgba(0, 100, 0, 0.2);
   border-left: 4px solid var(--prompt);
-  padding: 16px;
-  margin: 20px 0;
-  font-size: 20px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 22px;
 }
 
 .mission-title {
-  color: var(--dir);
   font-weight: bold;
-  font-size: 21px;
+  color: var(--dir);
+  font-size: 24px;
 }
 
-/* 📱 Aumenta ainda mais em celulares pequenos */
+/* Responsivo: forçar tamanho maior em telas pequenas */
 @media (max-width: 600px) {
-  body,
-  #terminal,
+  #terminal {
+    padding: 12px;
+  }
+
   #output,
   #prompt,
   #cmd,
   .cmd-text,
   .mission,
   .mission-title {
-    font-size: 22px !important;
-  }
-
-  #terminal {
-    padding: 16px;
-  }
-
-  #prompt {
-    margin-right: 8px;
+    font-size: 24px !important;
   }
 
   #cmd {
-    padding: 10px 4px;
+    padding: 12px 6px;
   }
 }
-
