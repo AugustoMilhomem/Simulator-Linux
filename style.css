@@ -1,30 +1,9 @@
-:root {
-  --bg: #0a0a0a;
-  --text: #0f0;
-  --prompt: #4CAF50;
-  --error: #f44336;
-  --warning: #FFC107;
-  --file: #FF9800;
-  --dir: #2196F3;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Courier New', monospace;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
 #terminal {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  padding: 20px 16px;
+  padding: 10px 16px; /* Reduzido de 20px para 10px */
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -32,7 +11,7 @@ html, body {
 #output {
   flex: 1;
   overflow-y: auto;
-  margin-bottom: 16px;
+  margin-bottom: 0; /* Removido o margin-bottom */
   font-size: 22px;
   line-height: 1.6;
   word-wrap: break-word;
@@ -42,13 +21,7 @@ html, body {
 #input-line {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-#prompt {
-  color: var(--prompt);
-  font-size: 22px;
-  flex-shrink: 0;
+  gap: 5px; /* Reduzido de 10px para 5px */
 }
 
 #cmd {
@@ -59,50 +32,15 @@ html, body {
   flex: 1;
   outline: none;
   caret-color: var(--prompt);
-  padding: 10px 5px;
+  padding: 8px 5px; /* Reduzido de 10px para 8px */
 }
 
-.cmd-text {
-  color: var(--prompt);
-  font-weight: bold;
-  font-size: 22px;
-}
-
-.error { color: var(--error); }
-.success { color: var(--prompt); }
-.file { color: var(--file); }
-.dir { color: var(--dir); }
-
-.mission {
-  background: rgba(0, 100, 0, 0.2);
-  border-left: 4px solid var(--prompt);
-  padding: 12px;
-  margin-bottom: 16px;
-  font-size: 22px;
-}
-
-.mission-title {
-  font-weight: bold;
-  color: var(--dir);
-  font-size: 24px;
-}
-
-/* Responsivo: forçar tamanho maior em telas pequenas */
 @media (max-width: 600px) {
   #terminal {
-    padding: 12px;
-  }
-
-  #output,
-  #prompt,
-  #cmd,
-  .cmd-text,
-  .mission,
-  .mission-title {
-    font-size: 24px !important;
+    padding: 8px; /* Reduzido para telas pequenas */
   }
 
   #cmd {
-    padding: 12px 6px;
+    padding: 8px 6px; /* Ajustado para telas pequenas */
   }
 }
