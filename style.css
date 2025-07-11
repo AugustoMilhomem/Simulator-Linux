@@ -1,124 +1,128 @@
 :root {
-    --bg: #0a0a0a;
-    --text: #0f0;
-    --prompt: #4CAF50;
-    --error: #f44336;
-    --warning: #FFC107;
-    --file: #FF9800;
-    --dir: #2196F3;
+  --bg: #0a0a0a;
+  --text: #0f0;
+  --prompt: #4CAF50;
+  --error: #f44336;
+  --warning: #FFC107;
+  --file: #FF9800;
+  --dir: #2196F3;
 }
 
 body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Courier New', monospace;
-    margin: 0;
-    padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
 }
 
 #terminal {
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 100%;
-    min-height: 100vh;
-    box-sizing: border-box;
-    border-left: 3px solid var(--prompt);
-    background: #0a0a0a;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    overflow-y: auto;
+  margin: 0 auto;
+  padding: 24px;
+  max-width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow-y: auto;
 }
 
 #output {
-    flex: 1;
-    overflow-y: auto;
-    margin-bottom: 15px;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    font-size: 16px;
-    line-height: 1.5;
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 20px;
+  line-height: 1.7;
 }
 
 #input-line {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: auto;
 }
 
 #prompt {
-    color: var(--prompt);
-    margin-right: 10px;
-    flex-shrink: 0;
-    font-size: 18px;
+  color: var(--prompt);
+  margin-right: 10px;
+  flex-shrink: 0;
+  font-size: 22px;
 }
 
 #cmd {
-    background: transparent;
-    border: none;
-    color: var(--text);
-    font-family: inherit;
-    flex: 1;
-    min-width: 0;
-    font-size: 18px;
-    outline: none;
-    caret-color: var(--prompt);
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-family: inherit;
+  flex: 1;
+  min-width: 0;
+  font-size: 22px;
+  outline: none;
+  caret-color: var(--prompt);
 }
 
 .cmd-text {
-    color: var(--prompt);
-    font-weight: bold;
-    font-size: 16px;
+  color: var(--prompt);
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .error {
-    color: var(--error);
+  color: var(--error);
 }
 
 .success {
-    color: var(--prompt);
+  color: var(--prompt);
 }
 
 .file {
-    color: var(--file);
+  color: var(--file);
 }
 
 .dir {
-    color: var(--dir);
+  color: var(--dir);
 }
 
 .mission {
-    background: rgba(0, 100, 0, 0.2);
-    border-left: 3px solid var(--prompt);
-    padding: 10px;
-    margin: 15px 0;
-    font-size: 16px;
+  background: rgba(0, 100, 0, 0.2);
+  border-left: 4px solid var(--prompt);
+  padding: 16px;
+  margin: 20px 0;
+  font-size: 20px;
 }
 
 .mission-title {
-    color: var(--dir);
-    font-weight: bold;
+  color: var(--dir);
+  font-weight: bold;
+  font-size: 21px;
 }
 
-/* 🔍 Ajustes específicos para telas pequenas (modo retrato em celular) */
+/* 📱 Aumenta ainda mais em celulares pequenos */
 @media (max-width: 600px) {
-    body, #terminal, #output, #prompt, #cmd, .cmd-text, .mission {
-        font-size: 18px !important;
-    }
+  body,
+  #terminal,
+  #output,
+  #prompt,
+  #cmd,
+  .cmd-text,
+  .mission,
+  .mission-title {
+    font-size: 22px !important;
+  }
 
-    #terminal {
-        padding: 12px;
-        border-left: none;
-        border-top: 3px solid var(--prompt);
-    }
+  #terminal {
+    padding: 16px;
+  }
 
-    #prompt {
-        margin-right: 6px;
-    }
+  #prompt {
+    margin-right: 8px;
+  }
 
-    #cmd {
-        padding: 8px 4px;
-    }
+  #cmd {
+    padding: 10px 4px;
+  }
 }
 
