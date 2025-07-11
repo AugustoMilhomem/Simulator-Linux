@@ -8,57 +8,60 @@
     --dir: #2196F3;
 }
 
-* {
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0;
     background: var(--bg);
     color: var(--text);
     font-family: 'Courier New', monospace;
-    padding: 10px;
+    margin: 0;
+    padding: 0;
 }
 
 #terminal {
+    margin: 0 auto;
+    padding: 20px;
     max-width: 100%;
-    height: 90vh;
-    border: 1px solid #333;
-    border-radius: 5px;
-    padding: 15px;
-    overflow-y: auto;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    min-height: 100vh;
+    box-sizing: border-box;
+    border-left: 3px solid var(--prompt);
+    background: #0a0a0a;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    overflow-y: auto;
 }
 
 #output {
-    flex-grow: 1;
+    flex: 1;
     overflow-y: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
     white-space: pre-wrap;
-    word-break: break-word;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 #input-line {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    margin-top: auto;
 }
 
 #prompt {
     color: var(--prompt);
     margin-right: 10px;
-    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 18px;
 }
 
 #cmd {
-    flex: 1;
     background: transparent;
     border: none;
     color: var(--text);
     font-family: inherit;
-    font-size: 1em;
+    flex: 1;
+    min-width: 0;
+    font-size: 18px;
     outline: none;
     caret-color: var(--prompt);
 }
@@ -66,27 +69,56 @@ body {
 .cmd-text {
     color: var(--prompt);
     font-weight: bold;
+    font-size: 16px;
 }
 
 .error {
     color: var(--error);
 }
+
 .success {
     color: var(--prompt);
 }
+
 .file {
     color: var(--file);
 }
+
 .dir {
     color: var(--dir);
 }
+
 .mission {
     background: rgba(0, 100, 0, 0.2);
     border-left: 3px solid var(--prompt);
     padding: 10px;
-    margin-top: 15px;
+    margin: 15px 0;
+    font-size: 16px;
 }
+
 .mission-title {
-    font-weight: bold;
     color: var(--dir);
+    font-weight: bold;
 }
+
+/* 🔍 Ajustes específicos para telas pequenas (modo retrato em celular) */
+@media (max-width: 600px) {
+    body, #terminal, #output, #prompt, #cmd, .cmd-text, .mission {
+        font-size: 18px !important;
+    }
+
+    #terminal {
+        padding: 12px;
+        border-left: none;
+        border-top: 3px solid var(--prompt);
+    }
+
+    #prompt {
+        margin-right: 6px;
+    }
+
+    #cmd {
+        padding: 8px 4px;
+    }
+}
+
